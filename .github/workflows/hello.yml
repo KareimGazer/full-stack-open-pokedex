@@ -10,5 +10,9 @@ jobs:
     runs-on: ubuntu-latest
     name: Hello World
     steps:
-      - name: say hello
+      - name: Say Hello
         run: echo "Hello World!"
+      - name: Now It's
+        run: date
+      - name: Directory Content
+        run: ls -la
