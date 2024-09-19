@@ -1,0 +1,22 @@
+name: Deployment Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: node prod env
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20 # the same version used for production
+      - name: Install dependencies
+        run: npm install
+      - name: Check Style
+        run: npm run eslint
