@@ -23,6 +23,7 @@ const PokemonPage = ({ previous, next }) => {
     name: formatName(stat.stat.name),
     value: stat.base_stat
   })).reverse()
+
   const normalAbility = pokemon.abilities.find((ability) => !ability.is_hidden)
   const hiddenAbility = pokemon.abilities.find((ability) => ability.is_hidden === true)
 
@@ -32,7 +33,7 @@ const PokemonPage = ({ previous, next }) => {
       <div className="links">
         {previous && <Link to={`/pokemon/${previous.name}`}>Previous</Link>}
         <Link to="/">Home</Link>
-        {next && <Link to={`/pokemon/${previous.name}`}>Next</Link>}
+        {next && <Link to={`/pokemon/${next.name}`}>Next</Link>}
       </div>
       <div className={`pokemon-page pokemon-type-${type.name}`}>
         <div className="pokemon-image" style={{ backgroundImage: `url(${pokemon.sprites.front_default})` }} />
