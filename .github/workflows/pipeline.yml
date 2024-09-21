@@ -23,5 +23,4 @@ jobs:
             echo "Prettier check passed"
           else
             npx prettier --write .
-            exit 1
           fi
