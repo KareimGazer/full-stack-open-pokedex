@@ -16,5 +16,12 @@ jobs:
       - name: Install dependencies
         run: npm ci # clean install - suitable for prod env
       - name: Check code style
-        run: npm run eslint
-        
+        run: npx prettier --check .
+      - name: Prettier Result
+        run: |
+          if [ $? -eq 0 ]; then
+            echo "Prettier check passed"
+          else
+            npx prettier --write .
+            exit 1
+          fi
