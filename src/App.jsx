@@ -6,11 +6,12 @@ import ErrorMessage from './ErrorMessage'
 import PokemonPage from './PokemonPage'
 import PokemonList from './PokemonList'
 
-const mapResults = (({ results }) => results.map(({ url, name }) => ({
-  url,
-  name,
-  id: parseInt(url.match(/\/(\d+)\//)[1])
-})))
+const mapResults = ({ results }) =>
+  results.map(({ url, name }) => ({
+    url,
+    name,
+    id: parseInt(url.match(/\/(\d+)\//)[1])
+  }))
 
 const App = () => {
   const match = useMatch('/pokemon/:name')
@@ -35,9 +36,11 @@ const App = () => {
   return (
     <Routes>
       <Route exact path="/" element={<PokemonList pokemonList={pokemonList} />} />
-      <Route exact path="/pokemon/:name" element={
-        <PokemonPage pokemonList={pokemonList} previous={previous} next={next} />
-      } />
+      <Route
+        exact
+        path="/pokemon/:name"
+        element={<PokemonPage pokemonList={pokemonList} previous={previous} next={next} />}
+      />
     </Routes>
   )
 }

@@ -80,7 +80,7 @@ describe('<PokemonPage />', () => {
       render(
         <MemoryRouter initialEntries={['/pokemon/eevee']}>
           <PokemonPage />
-        </MemoryRouter>,
+        </MemoryRouter>
       )
     })
 
@@ -95,7 +95,7 @@ describe('<PokemonPage />', () => {
       render(
         <MemoryRouter initialEntries={['/pokemon/eevee']}>
           <PokemonPage />
-        </MemoryRouter>,
+        </MemoryRouter>
       )
     })
 
@@ -108,8 +108,8 @@ describe('<PokemonPage />', () => {
     await act(async () => {
       render(
         <MemoryRouter initialEntries={['/pokemon/eevee']}>
-          <PokemonPage previous={previous} next={next}/>
-        </MemoryRouter>,
+          <PokemonPage previous={previous} next={next} />
+        </MemoryRouter>
       )
     })
 
@@ -124,11 +124,11 @@ describe('<PokemonPage />', () => {
       render(
         <MemoryRouter initialEntries={['/pokemon/eevee']}>
           <PokemonPage />
-        </MemoryRouter>,
+        </MemoryRouter>
       )
     })
 
     expect(screen.queryByText('Previous')).toBeNull()
     expect(screen.queryByText('Next')).toBeNull()
-  })  
+  })
 })
