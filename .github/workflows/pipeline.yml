@@ -17,3 +17,8 @@ jobs:
         run: npm ci # clean install - suitable for prod env
       - name: Lint Code
         run: npx prettier --write .
+      - name: Build
+        run: npm run build
+      - name: test
+        run: npm test
+
